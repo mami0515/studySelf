@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $.ajax({
+    type:"GET",
+    url:"zaseki/zaseki.php",
+    dataType:"json",
+    success:function(res){
+      var seatData = res,
+        i,
+        l = seatData.length;
+
+      for(i = 0; i < l; i++){
+        renderSeat(seatData[i].name, seatData[i].seat, seatData[i].id);
+      }
+
+      function renderSeat(name, seat, id){
+        $('body').append('<ul id="s' + id + '">');
+        $('#s' + id).append('<li>' + 'name:' + name + '</li>');
+        $('#s' + id).append('<li>' + 'seat:' + seat + '</li>');
+        $('#s' + id).append('<li>' + 'id:' + id + '</li>');
+      }
+
+    }
+  });
+});
+</script>
+</body>
+</html>

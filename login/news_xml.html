@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<div id="results"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $.ajax({
+    url:'rss/rss.xml',
+    type:'get',
+    success:function(xml){
+      var $ul = $('<ul>').appendTo($('#results'));
+      $(xml).find('item').each(function(){
+        var title = $(this).find('title').text(),
+            url = $(this).find('link').text();
+        $ul.append('<li class="entry"><a href="' + url + '">' + title + '</a></li>');
+      })
+    }
+  });
+});
+</script>
+</body>
+</html>

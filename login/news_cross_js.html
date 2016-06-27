@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<a href="#" id="btn">ボタン</a>
+<div id="results"></div>
+
+<script type="text/javascript">
+$(function(){
+  $('#btn').bind('click', function(e){
+    console.log('ボタンを押したよ！');
+    e.preventDefault();
+    var oScript = document.createElement('script');
+    oScript.src = 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://rss.dailynews.yahoo.co.jp/fc/rss.xml&callback=success';
+    document.body.appendChild(oScript);
+  });
+});
+
+function success(data){
+  document.getElementById('results').innerHTML = JSON.stringify(data.responseData.feed);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+.mt50{margin-top:50px;}
+</style>
+</head>
+<body>
+
+<p>ロゴ画像2枚切替</p>
+<div>
+  <a href="#" id="logoBtn">画像を変更</a>
+  <p><img src="http://i.yimg.jp/images/serp/ws/event/20th/logo.png" alt="Yahoo! JAPAN20周年のロゴ" id="logoImg"></p>
+</div>
+
+<script type="text/javascript">
+(function(){
+  var logoBtn = document.getElementById('logoBtn'),
+      logoImg = document.getElementById('logoImg');
+  logoBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if(logoImg.src === 'http://i.yimg.jp/images/serp/ws/event/20th/logo.png') {
+      logoImg.src = 'http://i.yimg.jp/images/evt/20th/pc/img/teaser/hdr_utils_logo01.png';
+    } else {
+      logoImg.src = 'http://i.yimg.jp/images/serp/ws/event/20th/logo.png';
+    }
+  });
+})();
+</script>
+
+
+
+<p class="mt50">画像をテキストリンクで切替</p>
+<div>
+  <p><img src="clickImg/01.png" id="linkImg01"></p>
+  <p><a href="URL01.html" target="_blank" id="link01">画像に関するページ</a></p>
+  <ul>
+    <li><a href="javascript:changeImg('linkImg01', '01', 'link01', 'URL01');">ボタン1</a></li>
+    <li><a href="javascript:changeImg('linkImg01', '02', 'link01', 'URL02');">ボタン2</a></li>
+    <li><a href="javascript:changeImg('linkImg01', '03', 'link01', 'URL03');">ボタン3</a></li>
+    <li><a href="javascript:changeImg('linkImg01', '04', 'link01', 'URL04');">ボタン4</a></li>
+  </ul>
+</div>
+
+<script type="text/javascript">
+function changeImg(idImage, imageName, idLink, URL) {
+  document.getElementById(idImage).src = 'clickImg/' + imageName + '.png';
+  document.getElementById(idLink).href = URL + '.html';
+}
+</script>
+
+
+
+<p class="mt50">画像をクリックして切替</p>
+<div>
+  <img src="clickImg/01.png" id="gazo" onclick="changeIMG()">
+</div>
+
+<script type="text/javascript">
+//画像を配列に格納する
+var gazo = document.getElementById('gazo'),
+    gazo = new Array();
+gazo[0] = new Image();
+gazo[0].src = "clickImg/01.png";
+gazo[1] = new Image();
+gazo[1].src = "clickImg/02.png";
+gazo[2] = new Image();
+gazo[2].src =  "clickImg/03.png";
+gazo[3] = new Image();
+gazo[3].src = "clickImg/04.png";
+//画像番号用のグローバル変数
+var cnt=0;
+//画像切り替え関数
+function changeIMG(){
+  //画像番号を進める
+  if (cnt == 3)
+  { cnt=0; }
+  else
+  { cnt++; }
+  //画像を切り替える
+  document.getElementById('gazo').src=gazo[cnt].src;
+}
+</script>
+
+
+
+<p class="mt50">画像をクリックして切替2</p>
+<div>
+  <img src="clickImg/01.png" id="gazo2" onclick="changeIMG2()">
+</div>
+
+<script type="text/javascript">
+var gazo2 =document.getElementById('gazo2'),
+    gazo2 = new Array(),
+    j = 1;
+function changeIMG2(){
+  gazo2[j] = new Image();
+  gazo2[j].src = 'clickImg/0' + j + '.png';
+  document.getElementById('gazo2').src = gazo2[j].src;
+  j++;
+  if (j === 5) {
+    j = 1;
+  }
+}
+</script>
+
+
+
+<p class="mt50">一定秒ごとに画像切替</p>
+<div>
+  <img src="clickImg/01.png" id="gazo3">
+</div>
+
+<script type="text/javascript">
+var sw = 1,
+    gazo3 = document.getElementById('gazo3'),
+    gazo3 = new Array(4);
+gazo3[1] = "clickImg/01.png";
+gazo3[2] = "clickImg/02.png";
+gazo3[3] = "clickImg/03.png";
+gazo3[4] = "clickImg/04.png";
+hyoujo();
+function hyoujo(){
+  setTimeout('hyoujo()', 3000);
+  document.getElementById('gazo3').src = gazo3[sw];
+  sw = sw + 1;
+  if(sw > 4){
+    sw = 1;
+  }
+}
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+

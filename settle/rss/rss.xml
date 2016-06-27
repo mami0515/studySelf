@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:blogChannel="http://backend.userland.com/blogChannelModule" version="2.0">
+  <channel>
+    <title>Yahoo!ニュース・トピックス - トップ</title>
+    <link>http://news.yahoo.co.jp/</link>
+    <description>Yahoo! JAPANのニュース・トピックスで取り上げている最新の見出しを提供しています。</description>
+    <language>ja</language>
+    <pubDate>Mon, 07 Mar 2016 16:49:50 +0900</pubDate>
+    <item>
+      <title>政権正念場 ジョーカー切るか</title>
+      <link>http://news.yahoo.co.jp/pickup/6193720</link>
+      <pubDate>Mon, 07 Mar 2016 13:22:41 +0900</pubDate>
+      <enclosure length="133" url="http://i.yimg.jp/images/icon/photo.gif" type="image/gif">
+      </enclosure>
+      <guid isPermaLink="false">yahoo/news/topics/6193720</guid>
+    </item>
+    <item>
+      <title>田母神氏の関連事務所を捜索</title>
+      <link>http://news.yahoo.co.jp/pickup/6193730</link>
+      <pubDate>Mon, 07 Mar 2016 14:35:33 +0900</pubDate>
+      <enclosure length="133" url="http://i.yimg.jp/images/icon/photo.gif" type="image/gif">
+      </enclosure>
+      <guid isPermaLink="false">yahoo/news/topics/6193730</guid>
+    </item>
+    <item>
+      <title>経済苦で高校中退 5000人超</title>
+      <link>http://news.yahoo.co.jp/pickup/6193735</link>
+      <pubDate>Mon, 07 Mar 2016 15:32:10 +0900</pubDate>
+      <enclosure length="133" url="http://i.yimg.jp/images/icon/photo.gif" type="image/gif">
+      </enclosure>
+      <guid isPermaLink="false">yahoo/news/topics/6193735</guid>
+    </item>
+    <item>
+      <title>保育園落ちた 政争ではない?</title>
+      <link>http://news.yahoo.co.jp/pickup/6193742</link>
+      <pubDate>Mon, 07 Mar 2016 16:21:08 +0900</pubDate>
+      <enclosure length="133" url="http://i.yimg.jp/images/icon/photo.gif" type="image/gif">
+      </enclosure>
+      <guid isPermaLink="false">yahoo/news/topics/6193742</guid>
+    </item>
+    <item>
+      <title>トランプ氏 改めて拷問を支持</title>
+      <link>http://news.yahoo.co.jp/pickup/6193721</link>
+      <pubDate>Mon, 07 Mar 2016 15:12:22 +0900</pubDate>
+      <enclosure length="133" url="http://i.yimg.jp/images/icon/photo.gif" type="image/gif">
+      </enclosure>
+      <guid isPermaLink="false">yahoo/news/topics/6193721</guid>
+    </item>
+    <item>
+      <title>日本人2選手 MLBで輝く40代</title>
+      <link>http://news.yahoo.co.jp/pickup/6193743</link>
+      <pubDate>Mon, 07 Mar 2016 16:17:11 +0900</pubDate>
+      <enclosure length="133" url="http://i.yimg.jp/images/icon/photo.gif" type="image/gif">
+      </enclosure>
+      <guid isPermaLink="false">yahoo/news/topics/6193743</guid>
+    </item>
+    <item>
+      <title>シャラポワ引退か 重大発表へ</title>
+      <link>http://news.yahoo.co.jp/pickup/6193722</link>
+      <pubDate>Mon, 07 Mar 2016 13:37:35 +0900</pubDate>
+      <enclosure length="133" url="http://i.yimg.jp/images/icon/photo.gif" type="image/gif">
+      </enclosure>
+      <guid isPermaLink="false">yahoo/news/topics/6193722</guid>
+    </item>
+    <item>
+      <title>めちゃイケ継続 視聴率に注文</title>
+      <link>http://news.yahoo.co.jp/pickup/6193745</link>
+      <pubDate>Mon, 07 Mar 2016 16:43:51 +0900</pubDate>
+      <enclosure length="133" url="http://i.yimg.jp/images/icon/photo.gif" type="image/gif">
+      </enclosure>
+      <guid isPermaLink="false">yahoo/news/topics/6193745</guid>
+    </item>
+  </channel>
+</rss>

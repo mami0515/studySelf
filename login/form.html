@@ -1,0 +1,123 @@
+<!DOCTYPE>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+.mt50{margin-top:50px;}
+.txBlue{color:blue;}
+.txRed{color:red;}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+document.write('<p>JSで入れる</p>');
+document.write('<form><input type="text" name="field1"><input type="text" name="field2"><input type="submit" value="送信"></form>');
+</script>
+
+
+
+<p class="mt50">divの中に入れる</p>
+<div id="form1"></div>
+
+<script type="text/javascript">
+document.getElementById('form1').innerHTML = '<form><input type="text" name="field1"><input type="text" name="field2"><input type="submit" value="送信"></form>'
+</script>
+
+
+
+<p class="mt50">ボタンをクリックするとエレメントを作成する</p>
+<div><a href="#" id="make">ここをクリック</a></div>
+<div id="box"></div>
+
+<script type="text/javascript">
+document.getElementById('make').addEventListener('click', function(e){
+  e.preventDefault();
+  var form = document.createElement('form');
+  form.name = 'fsend';
+  form.action = 'recieve.cgi';
+  form.method = 'POST';
+  form.style.visibility = 'visible';
+  document.getElementById('box').appendChild(form);
+  
+  var field1 = document.createElement('input');
+  field1.name = 'field1';
+  field1.type = 'text';
+  field1.value = 'data1';
+  form.appendChild(field1);
+  
+  var field2 = document.createElement('input');
+  field2.name = 'field2';
+  field2.type = 'text';
+  field2.value = 'data2';
+  form.appendChild(field2);
+  
+  var submit = document.createElement('input');
+  submit.type = 'submit';
+  submit.value = '送信';
+  form.appendChild(submit);
+});
+</script>
+
+
+
+<p class="mt50">エンコードとデコード</p>
+<form id="form2" name="form2">
+  <dl>
+    <dt>表示例：</dt>
+    <dd><input type="text" value="テスト表示 aBc +1 #5" id="txt"><input type="button" value="変換" onclick="exEncode()" onDblclick="javascript:document.form2.reset()"></dd>
+    <dt>escape()：</dt>
+    <dd><span id="escapeField"></span></dd>
+    <dt>encodeURL()：</dt>
+    <dd><span id="encodeURIField"></span></dd>
+    <dt>encodeURIComponent()：</dt>
+    <dd><span id="encodeURIComponentField"></span></dd>
+  </dl>
+</form>
+
+<script type="text/javascript">
+function exEncode(){
+  var txt = document.getElementById('txt').value,
+      ex1 = '';
+      ex2 = '';
+      ex3 = '';
+  for (var i = 0; i < txt.length; i++) {
+    s = txt.charAt(i);
+    ex1 += set_color(s, escape(s));
+    ex2 += set_color(s, encodeURI(s));
+    ex3 += set_color(s, encodeURIComponent(s));
+  }
+  document.getElementById('escapeField').innerHTML = ex1;
+  document.getElementById('encodeURIField').innerHTML = ex2;
+  document.getElementById('encodeURIComponentField').innerHTML = ex3;
+}
+function set_color(s1, s2){
+  if (s1 === s2) {
+    //青
+    return '<span class="txBlue">' + s2 + '</span>'
+  } else {
+    return '<span class="txRed">' + s2 + '</spam>'
+  }
+}
+</script>
+
+
+
+<p class="mt50">入力内容をアラート</p>
+<form>
+  <dl>
+    <dt>表示例：</dt>
+    <dd><input type="text" value="あいう" id="txt2"><input type="button" value="送信" onClick="alertA()"></dd>
+  </dl>
+</form>
+
+<script type="text/javascript">
+function alertA(){
+  alert(document.getElementById('txt2').value);
+}
+</script>
+
+
+
+</body>
+</html>

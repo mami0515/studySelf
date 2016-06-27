@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<a href="#" id="btn">ボタン</a>
+<div id="results"></div>
+
+<script type="text/javascript">
+$.ajax({
+  url: 'https://ajax.googleapis.com/ajax/services/feed/load',
+  dataType: 'jsonp',
+  data: {
+    v: '1.0',
+    q: 'http://design.settle.cre.ssk.ynwm.yahoo.co.jp/users/maoda/study/rss/rss.xml'
+  },
+  success: function(data, status){
+    console.log(data.responseData);
+    $('#btn').bind('click', function(e){
+      console.log('クリック');
+      e.preventDefault();
+      var entries = data.responseData.feed.entries,
+      i = 0,
+      $ul = $('<ul>').appendTo($('#results'));
+      $ul.attr('class', 'list');
+      for(i = 0; i < entries.length; i++){
+        $ul.append('<li><a href="' + entries[i].link + '">' + entries[i].title + '</a></li>');
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

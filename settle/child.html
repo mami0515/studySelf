@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<p>iframeの中です。<br>サーバーが違います。</p>
+<a href="#" id="btn">クリックすると親ページにデータが反映されるよ！</a>
+
+<script type="text/javascript">
+var a = "aaaa";
+console.log(a);
+
+document.getElementById("btn").addEventListener("click", function(e){
+  e.preventDefault();
+  console.log("iframeボタン押された");
+  parent.postMessage('{"sub":"248289761001", "name":"Doe", "given_name":"Jane", "family_name":"Doe", "preferred_username":"j.doe", "email":"yconnect@example.com", "email_verified":true, "address":{ "formatted":"東京都港区", "locality":"港区", "region":"東京都", "postal_code":"1076211", "country":"JP" }}', 'http://design01.login.ssk.ynwm.yahoo.co.jp/');
+});
+</script>
+</body>
+</html>

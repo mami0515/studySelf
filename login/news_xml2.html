@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<div id="results"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $.ajax({
+    url: 'rss.xml',
+    type: 'get',
+    cache: false,
+    beforeSend: function(){
+      console.log('ローディングされたよ！');
+      $('#results').append('<p id="preload" class="entry">loding...</p>');
+    },
+    success: function(xml){
+      $('#preload').remove();
+      var $ul = $('<ul>').appendTo($('#results'));
+      $(xml).find('item').each(function(){
+        var title = $(this).find('title').text(),
+            url = $(this).find('link').text();
+        $ul.append('<li class="entry"><a href="' + url + '">' + title + '</a></li>');
+      })
+    },
+    error: function(){
+      console.log('エラーのとききちんと表示されるようにしたよ！');
+      $('#results').append('<p>orz</p>');
+    }
+  });
+});
+</script>
+</body>
+</html>

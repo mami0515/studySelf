@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<iframe src="http://design.settle.cre.ssk.ynwm.yahoo.co.jp/users/maoda/study/child.html"></iframe>
+<p><input type="text" value="" id="name"></p>
+<p><input type="text" value="" id="mail"></p>
+<p><input type="text" value="" id="address"></p>
+
+<script type="text/javascript">
+window.addEventListener("message", function(e){
+  var res = JSON.parse(e.data);
+  console.log(res.name);
+  document.getElementById("name").value = res.name;
+  document.getElementById("mail").value = res.email;
+  document.getElementById("address").value = res.address.locality;
+});
+</script>
+</body>
+</html>

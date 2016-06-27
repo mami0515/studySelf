@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<div id="results"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $.ajax({
+    url:'rss/rss.json',
+    type:'get',
+    dataType:'json',
+    success:function(res){
+      var entries = res.entries,
+          i = 0,
+          l = entries.length,
+          $ul = $('<ul>').appendTo($('#results'));
+      for(i = 0; i < l; i++){
+          $ul.append('<li><a href="' + entries[i].link + '">' + entries[i].title + '</a></li>');
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
